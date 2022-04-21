@@ -14,17 +14,40 @@ import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import PostAddIcon from '@mui/icons-material/PostAdd';
+import Comment from './Comment';
+import IconButton from '@mui/material/IconButton';
+import {v4 as uuidv4} from 'uuid';
 
 const styles = {
     textField: {
         width: '100%',
-        borderRadius: '500px'
+        borderRadius: '500px',
+        cursor: "pointer"
     }
 }
 
 const CreatePost = () => {
     const [typing,
         setTyping] = useState('');
+    const [text,
+        setText] = useState('');
+    const [cmnt,
+        setCmnt] = useState([]);
+
+    const createFunct = () => {
+        if (text.length > 0) {
+            setCmnt(prevCmnt => {
+                return [
+                    ...prevCmnt,
+                    (text.trim())
+                ]
+            })
+        }
+
+        setText('');
+        setTyping('');
+    }
+    // console.log(cmnt);
 
     return (
         <div className="m-5">
@@ -37,18 +60,25 @@ const CreatePost = () => {
                             bgcolor: 'darkgrey',
                             width: "4.7rem",
                             height: "4.7rem"
-                        }}>AR</Avatar>
+                        }}>AS</Avatar>
                     </div>
-                    <div className="col-11">
+                    <div
+                        style={{
+                        cursor: 'pointer'
+                    }}
+                        className="col-11">
 
                         <TextField
                             onChange={(e) => {
                             if (e.target.value) {
-                                setTyping("Typing....")
-                            }else{
-                                setTyping('')
+                                setTyping("Typing....");
+                                setText(e.target.value)
+                            } else {
+                                setTyping('');
+                                setText(e.target.value)
                             }
                         }}
+                            value={text}
                             helperText={typing}
                             style={styles.textField}
                             id="filled-basic"
@@ -60,7 +90,9 @@ const CreatePost = () => {
                             InputProps={{
                             endAdornment: (
                                 <InputAdornment position="centre">
-                                    <PostAddIcon/>
+                                    <IconButton>
+                                        <PostAddIcon/>
+                                    </IconButton>
                                 </InputAdornment>
                             )
                         }}/>
@@ -68,7 +100,11 @@ const CreatePost = () => {
                 </div>
                 <div className="row">
                     <div className="col-3 p-1 pt-4">
+
                         <Button
+                            onClick={() => {
+                            createFunct()
+                        }}
                             color="primary"
                             className="btnT"
                             style={{
@@ -120,7 +156,19 @@ const CreatePost = () => {
                         </Button>
                     </div>
                 </div>
+
+                <div className="m-1 mt-5 p-1 row">
+
+                    {cmnt.map((item, index) => (<Comment key={uuidv4() + "_" + index} text={item}/>))}
+                </div>
             </div>
+            <br/>
+            <br/>
+            <br/>
+            <a target="_blank" href="https://aryansingh920.github.io/AryanSingh">
+                <h5>Aryan Singh</h5>
+            </a>
+
         </div>
     )
 }
