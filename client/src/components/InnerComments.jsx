@@ -31,6 +31,7 @@ const InnerComments = (props) => {
 
             <div className="row">
                 <TextField
+                    variant="filled"
                     onChange={(e) => {
                     setTexts(e.target.value)
                 }}
@@ -55,7 +56,7 @@ const InnerComments = (props) => {
                 }}
                     label="Reply"
                     className={props.displayReply}
-                    variant="standard"/>
+                    />
 
             </div>
         </div>

@@ -15,7 +15,6 @@ import IconButton from '@mui/material/IconButton';
 import Zoom from '@mui/material/Zoom';
 import InnerComments from './InnerComments';
 
-
 const Inner = (props) => {
     const [thumbsUp,
         setterThumbsUp] = React.useState(true);
@@ -34,13 +33,32 @@ const Inner = (props) => {
     const innerComments = props.content
     return (
         <div className="p-4 ">
-            <div className="p-1 " style={{
+            <div
+                className="p-1 row"
+                style={{
                 textAlign: 'left'
             }}>
-                <ol>
+
+                <ol class="col p-3 me-2 p-5 pt-1">
                     {innerComments.map((i, j) => (
                         <div key={j}>
-                            <li id="inner32">{i}</li>
+                            <li>
+                                <TextField
+                                multiline
+                                rows={2}
+                                    disabled
+                                    variant="standard"
+                                    style={{
+                                    width: '100%',
+                                    color: 'rgb(50, 50, 50)',
+                                    opacity: 1,
+                                    "-webkit-text-fill-color": "rgba(0, 0, 0, 0.38)"
+                                }}
+                                    value={i}
+                                    id=""/>
+
+                            </li>
+
                             <div className="row ms-4">
                                 <div
                                     style={{
