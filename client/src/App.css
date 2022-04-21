@@ -1,3 +1,16 @@
+html,
+.App {
+    /* background-image: url("bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover; */
+    background: rgb(255, 255, 255);
+    background: -moz-linear-gradient(260deg, rgba(255, 255, 255, 1) 0%, rgba(54, 123, 255, 0.3874592073157388) 100%);
+    background: -webkit-linear-gradient(260deg, rgba(255, 255, 255, 1) 0%, rgba(54, 123, 255, 0.3874592073157388) 100%);
+    background: linear-gradient(260deg, rgba(255, 255, 255, 1) 0%, rgba(54, 123, 255, 0.3874592073157388) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#367bff", GradientType=1);
+}
+
 .App {
     text-align: center;
 }
