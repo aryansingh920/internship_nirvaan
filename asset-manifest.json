@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/internship_nirvaan/static/css/main.e469e10c.css",
+    "main.js": "/internship_nirvaan/static/js/main.3a6c8aca.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/internship_nirvaan/static/js/787.c4e7f8f9.chunk.js",
+    "index.html": "/internship_nirvaan/index.html",
+    "main.e469e10c.css.map": "/internship_nirvaan/static/css/main.e469e10c.css.map",
+    "main.3a6c8aca.js.map": "/internship_nirvaan/static/js/main.3a6c8aca.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/internship_nirvaan/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e469e10c.css",
+    "static/js/main.3a6c8aca.js"
+  ]
+}
